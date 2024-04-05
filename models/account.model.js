@@ -15,7 +15,7 @@ const accountSchema=new mongoose.Schema({
         unique:true
     },
     amount:{
-        type:Number,
+        type:String,
         require:true,
         default:0.00
     },
