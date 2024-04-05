@@ -1,4 +1,5 @@
 const userModel=require('../models/user.model');
+const accountModel=require('../models/account.model');
 const signAccessToken=require('../utils/token');
 
 const user={
@@ -28,6 +29,17 @@ const user={
         catch(err)
         {
             return res.status(500).json({message:"internal server error."});
+        }
+    },
+    accountDetails:async(req,res)=>{
+        try
+        {
+            const accountDetails=await accountModel.findOne({_id:req.user}).select('-_id');
+            return res.status(200).json({accountDetails});
+        }
+        catch(err)
+        {
+            res.status(500).json({message:"internal server error."});
         }
     }
 }

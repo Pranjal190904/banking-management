@@ -15,7 +15,7 @@ const accountSchema=new mongoose.Schema({
         unique:true
     },
     amount:{
-        type:mongoose.Schema.Types.Decimal128,
+        type:mongoose.Schema.Types.Double,
         require:true,
         default:0.00
     },
@@ -31,4 +31,4 @@ const accountSchema=new mongoose.Schema({
     }
 })
 
-module.exports=mongoose.Schema("Account",accountSchema);
+module.exports=mongoose.model("Account",accountSchema);
