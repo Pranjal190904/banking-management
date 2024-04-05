@@ -14,10 +14,9 @@ const accountSchema=new mongoose.Schema({
         require:true,
         unique:true
     },
-    amount:{
-        type:String,
-        require:true,
-        default:0.00
+    balance:{
+        type:Number,
+        default:0
     },
     mobileNumber:{
         type:Number,
@@ -30,5 +29,7 @@ const accountSchema=new mongoose.Schema({
         type:String
     }
 })
+
+accountSchema.set('setDefaultsOnInsert', true);
 
 module.exports=mongoose.model("Account",accountSchema);
