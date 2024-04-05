@@ -15,7 +15,7 @@ const accountSchema=new mongoose.Schema({
         unique:true
     },
     amount:{
-        type:mongoose.Schema.Types.Double,
+        type:Number,
         require:true,
         default:0.00
     },
